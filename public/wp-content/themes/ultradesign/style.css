@@ -1,0 +1,367 @@
+/* 
+Theme Name: Ultra Design
+*/
+
+:root {
+  --text-dark: #3E3D3D;
+  --text-light: #CAC7C4;
+  --text-accent: #F9F8F5;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./assets/fonts/Raleway-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./assets/fonts/Raleway-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./assets/fonts/Raleway-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+    margin: 0;
+    background-color: var(--text-accent);
+    color: var(--text-dark);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-12 {
+  width: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    font-family: "Raleway";
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+h1 {
+  font-family: 'Raleway';
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+
+h3 {
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-size: 24px;
+}
+
+p {
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+/* КНОПКА */
+.btn a{
+    display: inline-block;
+    line-height: 60px;
+    text-align: center;
+    width: 311px;
+    height: 60px;
+    background-color: var(--text-dark);
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--text-accent);
+    transition: 0.5s;
+}
+
+.btn a:hover{
+    background-color: #91897e;
+
+}
+
+/* МЕНЮ */
+.menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu ul li {
+    margin-top: 25px;
+}
+
+.menu .logo {
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.menu .logo div:first-child {
+    font-family: 'Raleway';
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.menu ul li a {
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.menu ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ШАПКА */
+.header{
+    margin-bottom: 25px;
+}
+
+.header .row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header .text{
+    width: 477px;
+    margin-right: 10%;
+    opacity: 0;
+    animation: appear 1s ease-out forwards;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+.header h1{
+    width: 477px;
+    font-size: 48px;
+    margin-bottom: 25px;
+}
+
+.header p{
+    width: 388px;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.header .image{
+    position: relative;
+    width: 594px;
+    height: 565px;
+}
+
+.header .image .frame{
+    position: absolute;
+    width: 594px;
+    height: 565px;
+    border: 0.5px solid #3E3D3D;
+    top: 14px;
+    right: 20px;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.header .image img{
+    position: relative;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(100%); /* старт: за правим краєм */
+    animation: slideIn 1s ease-out forwards; /* 1s = тривалість */
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0); /* кінцева позиція */
+  }
+}
+
+/* БІЖУЧА СТРОКА */
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 40s linear infinite;
+}
+
+.marquee-content span {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(62,61,61,0.15); 
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 64px;
+    display: inline-block;
+    padding-right: 2rem;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* ПОРТФОЛІО */
+.portfolio{
+    max-width: 1069px;
+    margin-bottom: 55px;
+}
+
+.portfolio h1{
+    font-size: 36px;
+    text-align: center;
+}
+
+.card-wrapper {
+    margin: 0 33px 45px;
+    padding: 20px 10px;
+    overflow: hidden;
+    --swiper-navigation-size: 44px;
+    --swiper-navigation-sides-offset: 0px; 
+    --swiper-navigation-color: var(--text-dark);
+}
+
+.card-list .card-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 230px;
+    height: 350px;
+    box-sizing: border-box;
+    list-style: none;
+    transition: transform 0.5s ease;
+}
+
+.card-list .card-item:hover {
+    transform: scale(1.085); /* збільшення на 10% */
+}
+
+.card-list h2{
+    font-size: 12.5px;
+    color: var(--text-accent);
+    margin-bottom: 28px;
+}
+
+.card-list a{
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    width: 164px;
+    height: 40px;
+    background-color: var(--text-accent);
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 12.5px;
+    color: var(--text-dark);
+    transition: 0.5s;
+    margin-bottom: 35px;
+}
+
+.card-list a:hover{
+    background-color: rgb(249, 248, 245, 0.8);
+}
+
+.card-list h2,
+.card-list a {
+    opacity: 0;                  /* невидимі */
+    transform: translateY(20px); /* трохи зсунуті вниз */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;        /* щоб не клікались, поки сховані */
+}
+
+.card-list .card-item:hover h2,
+.card-list .card-item:hover a {
+    opacity: 1;                  /* стають видимі */
+    transform: translateY(0);    /* повертаються на місце */
+    pointer-events: auto;        /* активні */
+}
+
+.portfolio .btn{
+    text-align: center;
+}
