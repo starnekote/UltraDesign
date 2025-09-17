@@ -11,14 +11,19 @@
     <!-- МЕНЮ -->
     <div class="menu">
         <div class="container">
-            <ul>
-                <li class="logo"><div>Ultra</div><div>Design</div></li>
-                <li><a href="#about">Про компанію</a></li>
-                <li><a href="#cervices">Переваги</a></li>
-                <li><a href="#certificates">Послуги</a></li>
-                <li><a href="#reviews">Портфоліо</a></li>
-                <li><a href="#request">Контакти</a></li>
-            </ul>
+            <div class="logo mobile"><div>Ultra</div><div>Design</div></div>
+            <div class="list" id="list">
+                <ul>
+                    <li class="logo"><div>Ultra</div><div>Design</div></li>
+                    <li><a href="#about">Про компанію</a></li>
+                    <li><a href="#cervices">Переваги</a></li>
+                    <li><a href="#certificates">Послуги</a></li>
+                    <li><a href="#reviews">Портфоліо</a></li>
+                    <li><a href="#request">Контакти</a></li>
+                </ul>
+            </div>
+        <div class="menu_btn burger" id="burger">&#8801;</div>
+        <div class="menu_btn cross" id="cross">&#215;</div>
         </div>
     </div>
     <!-- ШАПКА -->
@@ -32,7 +37,7 @@
                 </div>
             </div>
             <div class="image">
-                <img src="assets/images/обложка фото.png" alt="image">
+                <div class="img-container"><img src="assets/images/обложка фото.png" alt="image"></div>
                 <div class="frame"></div>
             </div>
             <div class="btn-mobile">
@@ -49,6 +54,22 @@
     </div>
 <script src="assets/js/swiper-bundle.min.js">
 
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.getElementById("burger");
+    const cross = document.getElementById("cross");
+    const list = document.getElementById("list");
+    const buttons = document.querySelectorAll('.menu_btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        console.log('k');
+        list.classList.toggle("show");
+        cross.classList.toggle("show");
+        burger.classList.toggle("hide");
+        });
+      });
+    });
 </script>
 </body>
 </html>
