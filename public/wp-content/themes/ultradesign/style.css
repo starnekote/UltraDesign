@@ -136,7 +136,7 @@ p {
 }
 
 /* КНОПКА */
-.btn a{
+.btn a, .btn-mobile a{
     display: inline-block;
     line-height: 60px;
     text-align: center;
@@ -150,9 +150,13 @@ p {
     transition: 0.5s;
 }
 
-.btn a:hover{
+.btn a:hover, .btn-mobile a:hover{
     background-color: #91897e;
 
+}
+
+.btn-mobile a {
+  display: none;
 }
 
 /* МЕНЮ */
@@ -189,6 +193,16 @@ p {
     text-decoration: underline;
 }
 
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 440px;
+  }
+
+  .menu ul li:not(:first-of-type) {
+    display: none;
+  }
+}
+
 /* ШАПКА */
 .header{
     margin-bottom: 25px;
@@ -215,7 +229,7 @@ p {
 }
 
 .header h1{
-    width: 477px;
+    width: 100%;
     font-size: 48px;
     margin-bottom: 25px;
 }
@@ -255,6 +269,52 @@ p {
   to {
     opacity: 1;
     transform: translateX(0); /* кінцева позиція */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header .row {
+    justify-content: center;
+  }
+
+  .header .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  .header h1{
+    width: 388px;
+    font-size: 35px;
+    margin-bottom: 0;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+  
+  .btn a{
+    display: none;
+  }
+
+  .btn-mobile a{
+    display: block;
+  }
+
+  .header .image{
+    width: 100%;
+    height: auto;
+  }
+
+   .header .image img{
+    width: 100%;
+    height: auto;
+  }
+
+  .header .frame{
+    display: none;
   }
 }
 
@@ -752,3 +812,4 @@ button:hover{
 .footer .policy a {
   font-family: 'Montserrat';
 }
+
