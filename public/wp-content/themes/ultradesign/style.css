@@ -1,3 +1,4 @@
+
 /* 
 Theme Name: Ultra Design
 */
@@ -374,7 +375,7 @@ p {
     font-size: 14px;
   }
   
-  .btn a{
+  .header .btn a{
     display: none;
   }
 
@@ -456,6 +457,8 @@ p {
     box-sizing: border-box;
     list-style: none;
     transition: transform 0.5s ease;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .card-list .card-item:hover {
@@ -504,6 +507,36 @@ p {
 
 .portfolio .btn{
     text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .portfolio{
+    max-width: 90%;
+    margin-bottom: 50px;
+}
+
+  .card-wrapper {
+    margin: 0 33px 20px;
+    padding: 20px 10px;
+  }
+
+  .card-wrapper {
+    --swiper-navigation-size: 60px;
+    --swiper-navigation-sides-offset: 0px;
+    --swiper-navigation-top-offset: 55%;
+    --swiper-navigation-color: var(--text-dark);
+}
+
+.card-list .card-item:hover {
+    transform: none;
+}
+
+  .portfolio .swiper-slide-active h2, 
+  .portfolio .swiper-slide-active a {
+      opacity: 1;                  /* стають видимі */
+    transform: translateY(0);    /* повертаються на місце */
+    pointer-events: auto;        /* активні */
+  }
 }
 
 /* ПОВІДОМЛЕННЯ */
@@ -571,6 +604,15 @@ p {
 
 .button:hover::after {
     transform: translate(8px, -50%) rotate(-45deg);
+}
+
+@media screen and (max-width: 480px) {
+  .message p {
+    width: 80%;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--text-accent);
+}
 }
 
 /* ПОСЛУГИ */
@@ -666,6 +708,12 @@ p {
   border-bottom: 1px solid var(--text-accent);
   transform: translateY(-50%) rotate(-45deg);
   transition: transform 0.5s ease;
+}
+
+@media screen and (max-width: 480px) {
+  .wcu .container {
+    flex-direction: column;
+  }
 }
 
 /* ПРО НАС */
