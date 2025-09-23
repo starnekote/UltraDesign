@@ -711,8 +711,53 @@ p {
 }
 
 @media screen and (max-width: 480px) {
+  .wcu {
+    margin: 55px 0;
+    height: fit-content;
+  }
+
   .wcu .container {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wcu p {
+    padding: 10px 0;
+    width: 250px;
+    text-align: center;
+  }
+
+  .wcu p:last-of-type{
+    margin-bottom: 60px;
+  }
+
+  .wcu h3 {
+    padding-top: 60px;
+  }
+
+  .wcu p:not(:last-of-type)::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: 30px;
+    width: 1px;
+    background-color: var(--text-accent);
+    transition: width 0.5s ease;
+  }
+
+  .wcu p:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    top: 59px;
+    right: 48.5%;
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid var(--text-accent);
+    border-bottom: 1px solid var(--text-accent);
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 0.5s ease;
   }
 }
 
@@ -728,6 +773,18 @@ p {
 .about .text{
   width: 415px;
   margin-left: 10vw;
+}
+
+@media screen and (max-width: 480px) {
+  .about {
+    height: fit-content;
+    flex-direction: column-reverse;
+  }
+
+  .about .photo img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* ДОСЯГНЕННЯ */
@@ -771,6 +828,12 @@ p {
   margin-top: 20px;
 }
 
+@media screen and (max-width: 480px) {
+  .achives {
+    display: none;
+  }
+}
+
 /* ЯК ЦЕ ПРАЦЮЄ */
 .hiw {
   margin-bottom: 130px;
@@ -800,6 +863,18 @@ p {
   font-family: 'Montserrat';
   font-weight: 700;
   font-size: 16px;
+}
+
+
+@media screen and (max-width: 480px) {
+  .hiw .col-6 {
+    width: 100%;
+  }
+
+  .hiw img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* ЗАЯВКА */
@@ -876,7 +951,34 @@ button{
 
 button:hover{
     background-color: #91897e;
+}
 
+@media screen and (max-width: 480px) {
+  .request{
+      margin-bottom: 40px;
+  }
+
+  .request .text h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.request .col-6 {
+  width: 328px;
+}
+
+.request .text p {
+  font-size: 14px;
+}
+  
+.request .row {
+  justify-content: center;
+  align-content: center;
+}
+  
+  .form h1 {
+    display: none;
+  }
 }
 
 /* ФУТЕР */
@@ -939,4 +1041,3 @@ button:hover{
 .footer .policy a {
   font-family: 'Montserrat';
 }
-
