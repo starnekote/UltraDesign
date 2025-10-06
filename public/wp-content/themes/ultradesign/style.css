@@ -934,9 +934,8 @@ p {
 }
 
 button{
-    display: inline-block;
-    line-height: 60px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     width: 311px;
     height: 60px;
     background-color: var(--text-accent);
